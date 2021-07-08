@@ -7,5 +7,7 @@
 ./build.sh
 ```
 
+* To change the docker name, adjust name in `build.sh` file
+
 # Requirement
 Build CUDA image first (CUDA10.1 is tested)
