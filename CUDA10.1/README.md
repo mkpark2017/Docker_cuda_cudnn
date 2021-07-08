@@ -20,7 +20,8 @@ echo $'{\n    "experimental": true\n}' | sudo tee /etc/docker/daemon.json
 
 * Make backup of daemon.json
 `mv /etc/docker/daemon.json /etc/docker/daemon.json_backup1`
-* Edit `/etc/docker/daemon.json`, add the lines
+* Edit `/etc/docker/daemon.json`
+\
 `
 echo $'{\n
     "runtimes": {\n
