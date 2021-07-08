@@ -2,8 +2,8 @@
 
 You need to prepare: 
 
-* A CUDA 9.0 Runfile save it in "cuda" directory
-* CUDNN 7.1 save it in "cudnn" directory
+* A CUDA 9.0 Runfile save it in "cuda" directory (check the readme in cuda folder)
+* CUDNN 7.1 save it in "cudnn" directory (check the readme in cudnn folder)
 
 You might want to revise the Dockerfile for the filename changes.
 
