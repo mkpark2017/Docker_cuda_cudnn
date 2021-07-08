@@ -81,6 +81,8 @@ EXPOSE 5900
 
 WORKDIR /root
 
+COPY example.ipynb /notebooks/.
+RUN chmod 777 /notebooks/example.ipynb
 COPY startup.sh /
 RUN chmod 777 /startup.sh
 ENTRYPOINT ["/startup.sh", "--allow-root"]
