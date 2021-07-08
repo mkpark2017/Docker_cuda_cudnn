@@ -81,6 +81,7 @@ EXPOSE 5900
 
 WORKDIR /root
 
+RUN mkdir /notebooks
 COPY example.ipynb /notebooks/.
 RUN chmod 777 /notebooks/example.ipynb
 COPY startup.sh /
