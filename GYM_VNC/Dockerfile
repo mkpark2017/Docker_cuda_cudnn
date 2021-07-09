@@ -33,7 +33,8 @@ RUN pip install jupyter pandas matplotlib scipy seaborn scikit-learn scikit-Imag
 ######################################################################
 # 3. installing Tensorflow (GPU) + Pytorch
 RUN conda install tensorflow-gpu conda=${CONDA_V}
-RUN conda install pytorch torchvision conda=${CONDA_V}
+RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+
 
 ######################################################################
 # 4. installing OpenAI Gym (plus dependencies)
