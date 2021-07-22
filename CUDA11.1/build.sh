@@ -3,4 +3,4 @@
 # docker build --squash -t mk:cuda10.1-ubuntu18.04 .
 
 # original build 
-docker build -t mk:cuda10.1-ubuntu18.04 .
+docker build -t mk:cuda11.1-ubuntu18.04 .
