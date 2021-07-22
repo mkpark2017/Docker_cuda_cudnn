@@ -1,9 +1,9 @@
-# CUDA 10.1 (with CUDNN 7.6) on Ubuntu 18.04 Dockerfile
+# CUDA 11.1 (with CUDNN 8.0.5) on Ubuntu 18.04 Dockerfile
 
 You need to prepare: 
 
-* A CUDA 10.1 Runfile save it in "cuda" directory (check the readme in cuda folder)
-* CUDNN 7.6 save it in "cudnn" directory (check the readme in cudnn folder)
+* A CUDA 11.1 Runfile save it in "cuda" directory (check the readme in cuda folder)
+* CUDNN 8.0.5 save it in "cudnn" directory (check the readme in cudnn folder)
 
 You might want to revise the Dockerfile for the filename changes.
 
