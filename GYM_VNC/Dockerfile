@@ -1,7 +1,7 @@
 #####################################################################
-# CONDA 4.10.1, Python, Jupyter, Tensorflow, OpenAI Gym, Pytorch 
+# CONDA 4.10.3, Python, Jupyter, Tensorflow, OpenAI Gym, Pytorch 
 #####################################################################
-FROM mk:cuda10.1-ubuntu18.04
+FROM mk:cuda11.0-ubuntu18.04
 LABEL maintainer="Minkyu Park <mk.park@unist.ac.kr>"
 #####################################################################
 ARG DEBIAN_FRONTEND=noninteractive
@@ -14,9 +14,9 @@ RUN apt-get update --fix-missing && \
 
 ENV HOME /root
 
-# install miniconda4.10.1 based on python3.7
-ENV CONDA_V="4.8.3"
-RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x86_64.sh -O ~/miniconda.sh && \
+# install miniconda4.10.3 based on python3.7
+ENV CONDA_V="4.10.3"
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py37_4.10.3-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
     rm ~/miniconda.sh && \
     /opt/conda/bin/conda clean -tipsy && \
@@ -26,15 +26,26 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux
 ######################################################################
 # 2. installing jupyter, and a bunch of Science Python Packages
 # packages taken from https://hub.docker.com/r/jupyter/datascience-notebook/
+# 2.1 installing Tensorflow (GPU) + Pytorch
+RUN conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch -c conda-forge
 RUN conda install --channel=numba llvmlite conda=${CONDA_V}
-RUN pip install jupyter pandas matplotlib scipy seaborn scikit-learn scikit-Image sympy cython patsy statsmodels cloudpickle dill numba bokeh
+RUN pip install jupyter pandas matplotlib scipy seaborn scikit-learn scikit-Image sympy cython patsy statsmodels cloudpickle dill numba bokeh tensorflow
+RUN conda install -c conda-forge tensorboardx -y && \
+    conda install -c conda-forge tensorboard -y
+
 # It is easy to debug run every command seperately
 
-######################################################################
-# 3. installing Tensorflow (GPU) + Pytorch
-RUN conda install tensorflow-gpu conda=${CONDA_V}
-RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
-
+#RUN conda install -c conda-forge tensorboardx -y && \
+#    conda install -c conda-forge notebook -y && \
+#    conda install -c conda-forge numpy=1.16.6 -y && \
+#    conda install -c conda-forge pandas -y && \
+#    conda install -c conda-forge matplotlib -y && \
+#    conda install -c conda-forge opencv -y && \
+#    conda install -c conda-forge scikit-learn -y && \
+#    conda install -c conda-forge tqdm -y && \
+#    conda install -c conda-forge scikit-image -y && \
+#    conda install -c anaconda scipy=1.5.3 -y && \
+#    conda install -c anaconda h5py=2.10.0 -y
 
 ######################################################################
 # 4. installing OpenAI Gym (plus dependencies)
@@ -74,11 +85,11 @@ RUN apt-get clean
 
 
 # TensorBoard
-EXPOSE 6006
+EXPOSE 6016
 # IPython
-EXPOSE 8888
+EXPOSE 8898
 # VNC Server
-EXPOSE 5900
+EXPOSE 5910
 
 WORKDIR /root
 

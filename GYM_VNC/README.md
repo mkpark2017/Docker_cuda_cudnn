@@ -3,11 +3,6 @@
 ## installation
 
 ```
-#changes permission
-sudo chmod 777 build.sh
-```
-
-```
 #builds and runs the image, binding your path to the container, so you can access them from jupyter
 ./build.sh
 ```
