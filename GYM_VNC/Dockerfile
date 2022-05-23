@@ -85,11 +85,11 @@ RUN apt-get clean
 
 
 # TensorBoard
-EXPOSE 6016
+EXPOSE 6006
 # IPython
-EXPOSE 8898
+EXPOSE 8888
 # VNC Server
-EXPOSE 5910
+EXPOSE 5900
 
 WORKDIR /root
 
