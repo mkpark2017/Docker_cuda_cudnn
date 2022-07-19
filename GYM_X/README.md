@@ -1,13 +1,12 @@
-# CUDA + TensorFlow + OpenAI Gym + RoboSchool + Jupyter
+# CUDA + TensorFlow + OpenAI Gym + RoboSchool
 
 ## installation
 
 ```
-#builds and runs the image, binding your path to the container, so you can access them from jupyter
-./build.sh
+#builds and runs the image, binding your path to the container
 ```
 
 * To change the docker name, adjust name in `build.sh` file
 
 # Requirement
-Build CUDA image first (CUDA10.1 is tested)
+Build CUDA image first (CUDA11.1 is tested)
