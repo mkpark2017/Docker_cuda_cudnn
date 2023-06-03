@@ -1,5 +1,5 @@
 #####################################################################
-#Python 3.5 , Jupyter, Tensorflow, OpenAI Gym, Pytorch 
+#Python 3.7 , Jupyter, Tensorflow, OpenAI Gym, Pytorch 
 #####################################################################
 FROM mk:cuda11.1-ubuntu18.04
 LABEL maintainer="Minkyu Park <mk.park@unist.ac.kr>"
