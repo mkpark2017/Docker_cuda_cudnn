@@ -1,7 +1,7 @@
 #####################################################################
 #Python 3.5 , Jupyter, Tensorflow, OpenAI Gym, Pytorch 
 #####################################################################
-FROM mk:cuda11.0-ubuntu18.04
+FROM mk:cuda11.1-ubuntu18.04
 LABEL maintainer="Minkyu Park <mk.park@unist.ac.kr>"
 #####################################################################
 # 1. setup docker ENV
