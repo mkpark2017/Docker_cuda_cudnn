@@ -34,6 +34,7 @@ RUN pip install jupyter pandas matplotlib scipy seaborn scikit-learn scikit-Imag
 #RUN pip install tensorflow-gpu==2.4.1
 RUN conda install -c conda-forge tensorboardx -y && \
     conda install -c conda-forge tensorboard -y
+RUN pip install tensorboard==2.11.2
 ######################################################################
 # 3. installing OpenAI Gym (plus dependencies)
 RUN pip install gym pyopengl
