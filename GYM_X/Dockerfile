@@ -30,7 +30,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py37_4.10.3-Linu
 # 2. installing Python
 RUN pip install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/torch_stable.html
 RUN conda install --channel=numba llvmlite conda=${CONDA_V}
-RUN pip install jupyter pandas matplotlib scipy seaborn scikit-learn scikit-Image sympy cython patsy statsmodels cloudpickle dill numba bokeh tensorflow pyglet colorama
+RUN pip install jupyter pandas matplotlib scipy seaborn scikit-learn scikit-Image sympy cython patsy statsmodels cloudpickle dill numba bokeh tensorflow pyglet==1.5.27 colorama
 #RUN pip install tensorflow-gpu==2.4.1
 RUN conda install -c conda-forge tensorboardx -y && \
     conda install -c conda-forge tensorboard -y
